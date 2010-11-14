@@ -2,7 +2,7 @@ var git = require('../lib/git'),
     nodeunit = require('../deps/nodeunit');
 
 
-module.exports = nodeunit.testCase({
+exports['command parsing'] = nodeunit.testCase({
 
     setUp: function (callback) {
         this._cmd = git.cmd;
@@ -13,7 +13,7 @@ module.exports = nodeunit.testCase({
         callback();
     },
 
-    'parse tag list': function (test) {
+    'tag list': function (test) {
         test.expect(3);
         git.cmd = function (wd, commands, callback) {
             test.equal(wd, 'working_dir');
@@ -33,7 +33,7 @@ module.exports = nodeunit.testCase({
         });
     },
 
-    'parse blobs from ls-tree output': function (test) {
+    'blobs from ls-tree output': function (test) {
         test.expect(3);
         git.cmd = function (wd, commands, callback) {
             test.equal(wd, 'working_dir');
@@ -76,3 +76,88 @@ module.exports = nodeunit.testCase({
     }
 
 });
+
+exports['eachBlob'] = function (test) {
+    test.expect(8);
+    var call_order = [];
+
+    var _lsBlobs = git.lsBlobs;
+    git.lsBlobs = function (wd, treeish, path, callback) {
+        test.equal(wd, 'wd');
+        test.equal(treeish, 'treeish');
+        test.equal(path, 'path');
+        callback(null, [
+            {path: 'one'},
+            {path: 'two'}
+        ]);
+    };
+
+    var _show = git.show;
+    git.show = function (wd, treeish, path, callback) {
+        test.equal(wd, 'wd');
+        test.equal(treeish, 'treeish');
+        call_order.push('show ' + path);
+        callback(null, 'data ' + path);
+    };
+
+    git.eachBlob('wd', 'treeish', 'path', function (blob, callback) {
+        call_order.push(blob);
+        setTimeout(callback, Math.random()*10);
+    },
+    function (err) {
+        call_order.push('callback');
+        test.same(call_order, [
+            'show one', {path: 'one', data: 'data one'},
+            'show two', {path: 'two', data: 'data two'},
+            'callback'
+        ]);
+        test.done();
+    });
+};
+
+exports['eachBlob - lsBlobs error'] = function (test) {
+    test.expect(1);
+    var call_order = [];
+
+    var _lsBlobs = git.lsBlobs;
+    git.lsBlobs = function (wd, treeish, path, callback) {
+        callback('error');
+    };
+
+    var _show = git.show;
+    git.show = function (wd, treeish, path, callback) {
+        test.ok(false, 'should not be called');
+    };
+
+    git.eachBlob('wd', 'treeish', 'path', function (blob, callback) {
+        test.ok(false, 'should not be called');
+        callback();
+    },
+    function (err) {
+        test.equal(err, 'error');
+        test.done();
+    });
+};
+
+exports['eachBlob - show error'] = function (test) {
+    test.expect(1);
+    var call_order = [];
+
+    var _lsBlobs = git.lsBlobs;
+    git.lsBlobs = function (wd, treeish, path, callback) {
+        callback(null, [{test:'blob'}]);
+    };
+
+    var _show = git.show;
+    git.show = function (wd, treeish, path, callback) {
+        callback('error');
+    };
+
+    git.eachBlob('wd', 'treeish', 'path', function (blob, callback) {
+        callback();
+    },
+    function (err) {
+        test.equal(err, 'error');
+        test.done();
+    });
+};
