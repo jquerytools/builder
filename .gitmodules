@@ -4,3 +4,6 @@
 [submodule "deps/UglifyJS"]
 	path = deps/UglifyJS
 	url = https://github.com/mishoo/UglifyJS.git
+[submodule "deps/async"]
+	path = deps/async
+	url = https://github.com/caolan/async.git
