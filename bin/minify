@@ -1,0 +1,18 @@
+#!/usr/bin/env node
+
+var builder = require('../lib/builder');
+
+var args = process.ARGV.slice(2);
+if (args.length < 1) {
+    console.log('usage: ./bin/minified working_dir');
+    console.log('working_dir - path to the jquerytools git checkout');
+}
+else {
+    var wd = args[0];
+    var output_dir = __dirname + '/../minified';
+
+    builder.exportAllMinified(wd, 'src', output_dir, function (err) {
+        if (err) console.error(err.stack);
+        else console.log('OK');
+    });
+}
