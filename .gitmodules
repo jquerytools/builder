@@ -1,3 +1,6 @@
 [submodule "deps/nodeunit"]
 	path = deps/nodeunit
 	url = https://github.com/caolan/nodeunit.git
+[submodule "deps/UglifyJS"]
+	path = deps/UglifyJS
+	url = https://github.com/mishoo/UglifyJS.git
