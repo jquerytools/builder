@@ -1,6 +1,6 @@
 var builder = require('../lib/builder'),
-    jsp = require("../deps/UglifyJS/lib/parse-js"),
-    pro = require("../deps/UglifyJS/lib/process");
+    jsp = require('../deps/UglifyJS/lib/parse-js'),
+    pro = require('../deps/UglifyJS/lib/process');
 
 
 exports['minify'] = function (test) {
