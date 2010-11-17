@@ -7,3 +7,12 @@
 [submodule "deps/async"]
 	path = deps/async
 	url = https://github.com/caolan/async.git
+[submodule "deps/connect"]
+	path = deps/connect
+	url = https://github.com/senchalabs/connect.git
+[submodule "deps/dispatch"]
+	path = deps/dispatch
+	url = https://github.com/caolan/dispatch.git
+[submodule "deps/quip"]
+	path = deps/quip
+	url = https://github.com/caolan/quip.git

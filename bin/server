@@ -1,0 +1,6 @@
+#!/usr/bin/env node
+
+var server = require('../lib/server');
+
+server.createServer().listen(8080);
+console.log('Running at http://127.0.0.1:8080/');
