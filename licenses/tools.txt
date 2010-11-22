@@ -1,0 +1,8 @@
+ * jQuery Tools @VERSION - The missing UI library for the Web
+ * 
+ * @TOOLS
+ * 
+ * NO COPYRIGHTS OR LICENSES. DO WHAT YOU LIKE.
+ * 
+ * http://flowplayer.org/tools/
+ * 

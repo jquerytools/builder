@@ -1,0 +1,10 @@
+ * jquery.tools 1.1.2 - The missing UI library for the Web (older version)
+ * 
+ * @TOOLS
+ * 
+ * NO COPYRIGHTS OR LICENSES. DO WHAT YOU LIKE.
+ * 
+ * http://flowplayer.org/tools-1.1/
+ * 
+ * -----
+ * 

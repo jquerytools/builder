@@ -1,0 +1,10 @@
+ * Flowplayer @VERSION - Flash Video Player for the Web
+ * 
+ * @PLUGINS
+ * 
+ * Copyright (c) 2009 Flowplayer Ltd
+ * Licensed under GPL 3+ license
+ * http://flowplayer.org/download/license_gpl.html
+ * 
+ * -----
+ * 
