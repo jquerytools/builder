@@ -65,3 +65,11 @@ There are a number of pre-defined builds available:
 * all -  All tools, no jQuery
 * default -  UI tools with jQuery
 * full - All tools with jquery
+
+## Adding another branch to the build server
+
+If you would like to start creating builds for another branch as well as 1.3.0,
+then you'll need to edit the init and update scripts in the bin directory.
+
+The changes should be self-explanatory, just copy the lines related to 1.3.0 and
+rename to the branch on github you'd like to track.
