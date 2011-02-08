@@ -2,5 +2,15 @@
 
 var server = require('../lib/server');
 
-server.createServer().listen(8080);
-console.log('Running at http://127.0.0.1:8080/');
+var args = process.argv.slice(2);
+var port = 8080;
+
+for (var i = 0; i < args.length; i += 1) {
+    if (args[i] === '-p') {
+        port = parseInt(args[i + 1], 10) || 8080;
+        break;
+    }
+}
+
+server.createServer().listen(port);
+console.log('Running at http://127.0.0.1:' + port + '/');

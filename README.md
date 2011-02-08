@@ -1,5 +1,6 @@
 # jQuery Tools builder
 
+
 ## Setup
 
 Be sure to fetch all the dependencies:
@@ -12,6 +13,7 @@ jquerytools repository.
 
 __Note:__ Problems were reported when running the init script with git v1.6.x,
 upgrading to 1.7.1 fixed this.
+
 
 ## Scripts
 
@@ -32,6 +34,14 @@ automatically run by the update script.
 
 Does a git pull on the master and 1.3.0 branches, then runs the minify script.
 This script is automatically run when the github post-receive-hook fires.
+
+### server
+
+Starts the build server. Accepts an optional port (-p) argument:
+
+    $ ./bin/server -p 8081
+    Running at http://127.0.0.1:8081/
+
 
 ## API
 
@@ -59,6 +69,7 @@ __Parameters__
 
 The URL to use for github post-receive-hooks. Runs the update script.
 
+
 ## Builds
 
 There are a number of pre-defined builds available:
@@ -68,6 +79,7 @@ There are a number of pre-defined builds available:
 * all -  All tools, no jQuery
 * default -  UI tools with jQuery
 * full - All tools with jquery
+
 
 ## Adding another branch to the build server
 
