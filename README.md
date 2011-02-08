@@ -10,6 +10,9 @@ Be sure to fetch all the dependencies:
 Then run the init script in the bin directory to create a clone of the
 jquerytools repository.
 
+__Note:__ Problems were reported when running the init script with git v1.6.x,
+upgrading to 1.7.1 fixed this.
+
 ## Scripts
 
 There are a few scripts in the bin directory:
@@ -17,7 +20,7 @@ There are a few scripts in the bin directory:
 ### init
 
 Creates a clone of the jquerytools repository on github, and sets up a tracking
-branch for 1.3.0. 
+branch for 1.3.0. After a new clone is created, it runs the update script.
 
 ### minify
 
