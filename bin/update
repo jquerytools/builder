@@ -2,6 +2,8 @@
 cd `dirname $0`/../jquerytools
 git checkout master
 git pull origin master
+git checkout dev
+git pull origin dev
 git checkout 1.3.0
 git pull origin 1.3.0
 node ../bin/minify
