@@ -80,6 +80,15 @@ There are a number of pre-defined builds available:
 * default -  UI tools with jQuery
 * full - All tools with jquery
 
+To update the available builds, see the lib/packages.js file.
+
+
+## jQuery versions
+
+By default, the build server uses jQuery v1.4.2, but this can be overridden
+depending on the branch used for the build. The 'dev' branch uses jQuery v1.5.1, for
+example. To update these settings, see the lib/jquery_versions.js file.
+
 
 ## Adding another branch to the build server
 
