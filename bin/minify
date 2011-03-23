@@ -8,5 +8,11 @@ var output_dir = __dirname + '/../minified';
 
 builder.exportAllMinified(wd, 'src', output_dir, function (err) {
     if (err) console.error(err.stack);
-    else console.log('OK');
+    else {
+        console.log('building info.json');
+        builder.buildInfo(output_dir, output_dir + '/info.json', function (err) {
+            if (err) console.error(err.stack);
+            else console.log('OK');
+        });
+    }
 });
