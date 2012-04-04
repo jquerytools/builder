@@ -1,18 +1,18 @@
 [submodule "deps/nodeunit"]
 	path = deps/nodeunit
-	url = https://github.com/caolan/nodeunit.git
+	url = git://github.com/caolan/nodeunit.git
 [submodule "deps/UglifyJS"]
 	path = deps/UglifyJS
-	url = https://github.com/mishoo/UglifyJS.git
+	url = git://github.com/mishoo/UglifyJS.git
 [submodule "deps/async"]
 	path = deps/async
-	url = https://github.com/caolan/async.git
+	url = git://github.com/caolan/async.git
 [submodule "deps/connect"]
 	path = deps/connect
-	url = https://github.com/senchalabs/connect.git
+	url = git://github.com/senchalabs/connect.git
 [submodule "deps/dispatch"]
 	path = deps/dispatch
-	url = https://github.com/caolan/dispatch.git
+	url = git://github.com/caolan/dispatch.git
 [submodule "deps/quip"]
 	path = deps/quip
-	url = https://github.com/caolan/quip.git
+	url = git://github.com/caolan/quip.git
