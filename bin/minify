@@ -2,7 +2,6 @@
 
 var builder = require('../lib/builder');
 
-var args = process.ARGV.slice(2);
 var wd = __dirname + '/../jquerytools';
 var output_dir = __dirname + '/../minified';
 
