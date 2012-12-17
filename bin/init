@@ -1,5 +1,5 @@
 #!/bin/sh
-npm install connect connect-cache
+npm install connect
 export NODE_PATH=./node_modules
 cd `dirname $0`/..
 git clone git://github.com/jquerytools/jquerytools.git
